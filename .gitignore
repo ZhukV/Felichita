@@ -1,0 +1,6 @@
+/vendor/
+/public/bundles/
+/var/
+
+/bin/*
+!/bin/console
