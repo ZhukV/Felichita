@@ -18,3 +18,14 @@ services:
         tty: true
         volumes:
             - './:/code'
+
+    mysql:
+        container_name: felichita-db
+        image: mysql:8
+        environment:
+            MYSQL_DATABASE: felichita
+            MYSQL_USER: user
+            MYSQL_PASSWORD: Q1w2e3r4
+            MYSQL_RANDOM_ROOT_PASSWORD: yes
+        ports:
+            - '3307:3306'
