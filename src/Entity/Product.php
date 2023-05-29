@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping\Column;
@@ -38,8 +40,8 @@ class Product
     #[Column(name: 'weight', type: 'integer')]
     private int $weight;
 
-    #[Column(name: 'calories', type: 'integer')]
-    private int $calories;
+    #[Column(name: 'calories', type: 'integer', nullable: true)]
+    private ?int $calories;
 
     public function setCategory(ProductCategory $category): void
     {
@@ -71,7 +73,7 @@ class Product
         $this->weight = $weight;
     }
 
-    public function setCalories(int $calories): void
+    public function setCalories(?int $calories): void
     {
         $this->calories = $calories;
     }

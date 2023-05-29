@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping\Column;
@@ -31,5 +33,10 @@ class ProductCategory
     public function setTitle(string $title): void
     {
         $this->title = $title;
+    }
+
+    public function setPriority(int $priority): void
+    {
+        $this->priority = $priority;
     }
 }
