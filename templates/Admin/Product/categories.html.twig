@@ -4,5 +4,38 @@
 {% block page_title %}Product categories{% endblock %}
 
 {% block page_content %}
-    List of product categories
+    <div class="pt-4 pb-4 text-end">
+        <a href="{{ path('admin_product_category_create') }}" class="btn btn-success">Add new category</a>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">Title</th>
+            <th class="text-center">Priority</th>
+            <th class="text-center">Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td class="text-center">{{ category.id }}</td>
+                <td>{{ category.title }}</td>
+                <td class="text-center">{{ category.priority }}</td>
+                <td class="text-center">
+                    <a class="btn btn-sm btn-light"
+                       href="{{ path('admin_product_category_edit', {categoryId: category.id}) }}">Edit</a>
+
+                    <a
+                        class="btn btn-sm btn-danger"
+                        href="{{ path('admin_product_category_remove', {categoryId: category.id}) }}"
+                        onclick="return confirm('Are you sure want to remove product category?')"
+                    >Remove</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

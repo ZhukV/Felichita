@@ -1,0 +1,8 @@
+{% extends 'Admin/html-layout.html.twig' %}
+
+{% block title %}Create :: Product categories :: {{ parent() }}{% endblock %}
+{% block page_title %}Create product category{% endblock %}
+
+{% block page_content %}
+    {{ form(category_form) }}
+{% endblock %}

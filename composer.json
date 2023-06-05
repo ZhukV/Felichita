@@ -13,11 +13,14 @@
         "symfony/console": "*",
         "symfony/runtime": "*",
         "symfony/yaml": "*",
-        "symfony/dotenv": "*"
+        "symfony/dotenv": "*",
+        "symfony/form": "*",
+        "symfony/validator": "*"
     },
 
     "require-dev": {
-        "symfony/web-profiler-bundle": "*"
+        "symfony/web-profiler-bundle": "*",
+        "symfony/var-dumper": "*"
     },
 
     "autoload": {

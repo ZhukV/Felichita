@@ -29,6 +29,15 @@
 </nav>
 
 <div class="container pt-5">
+
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for message in app.session.flashBag.get('success') %}
+                {{ message }}<br/>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <h1 class="text-center">{% block page_title %}{% endblock %}</h1>
 
     {% block page_content %}{% endblock %}
