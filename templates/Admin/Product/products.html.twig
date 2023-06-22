@@ -1,0 +1,42 @@
+{% extends 'Admin/html-layout.html.twig' %}
+
+{% block title %}Products :: {{ parent() }}{% endblock %}
+{% block page_title %}Products{% endblock %}
+
+{% block page_content %}
+    <div class="pt-4 pb-4 text-end">
+        <a href="{{ path('admin_product_create') }}" class="btn btn-success">Add new product</a>
+    </div>
+
+    <table class="table table-bordered">
+        <thead>
+        <tr class="text-center">
+            <th>ID</th>
+            <th>Image</th>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for product in products %}
+            <tr class="text-center">
+                <td>{{ product.id }}</td>
+
+                <td>
+                    <img src="{{ product.webImagePath }}" width="50"/>
+                </td>
+
+                <td>{{ product.category.title }}</td>
+                <td class="text-start">{{ product.title }}</td>
+                <td>{{ product.price }}</td>
+                <td>
+                    <a class="btn btn-sm btn-light" href="{{ path('admin_product_edit', {productId: product.id}) }}">Edit</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

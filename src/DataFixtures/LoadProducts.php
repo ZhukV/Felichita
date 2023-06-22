@@ -30,6 +30,7 @@ class LoadProducts extends Fixture implements DependentFixtureInterface
                 'price'       => 198.0,
                 'weight'      => 330,
                 'calories'    => 280,
+                'image'       => '/fixtures/burger.png',
             ],
 
             [
@@ -40,6 +41,7 @@ class LoadProducts extends Fixture implements DependentFixtureInterface
                 'price'       => 56.0,
                 'weight'      => 100,
                 'calories'    => null,
+                'image'       => '/fixtures/potato.png',
             ],
 
             [
@@ -50,6 +52,7 @@ class LoadProducts extends Fixture implements DependentFixtureInterface
                 'price'       => 0,
                 'weight'      => 700,
                 'calories'    => 20,
+                'image'       => '/fixtures/borsch.png',
             ],
         ];
 
@@ -65,6 +68,7 @@ class LoadProducts extends Fixture implements DependentFixtureInterface
             $product->setPrice($item['price']);
             $product->setWeight($item['weight']);
             $product->setCalories($item['calories']);
+            $product->setImagePath($item['image']);
 
             $manager->persist($product);
         }

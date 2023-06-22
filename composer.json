@@ -16,7 +16,8 @@
         "symfony/yaml": "*",
         "symfony/dotenv": "*",
         "symfony/form": "*",
-        "symfony/validator": "*"
+        "symfony/validator": "*",
+        "symfony/mime": "*"
     },
 
     "require-dev": {
