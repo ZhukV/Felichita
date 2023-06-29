@@ -1,0 +1,14 @@
+.product-category {
+    border-bottom-color: #EEEEEE !important;
+}
+
+
+.menu-categories {
+    list-style-type: none;
+}
+
+.menu-categories li {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding: 5px 0;
+}
